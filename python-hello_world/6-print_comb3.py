@@ -3,3 +3,4 @@ for num1 in range(9):
         print("{:d}{:d}".format(num1, num2), end="")
         if num1 != 8 or num2 != 9:
             print(", ", end="")
+print()
