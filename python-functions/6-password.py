@@ -2,7 +2,7 @@ def validate_password(password):
     length = len(password)
     check_uppercase=0
     check_lowercase=0
-    if length<8:
+    if length<=8:
         return False
     for num in range(length):
         if password[num].isupper():
