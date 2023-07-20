@@ -1,6 +1,6 @@
 def is_prime(number):
     if number == 0 or number == 1:
-        return False
+        return True
     no = abs(number)
     count = no - 1
     while (count > 1):
