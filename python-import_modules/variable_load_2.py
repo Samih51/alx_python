@@ -1,1 +1,2 @@
-a=98
+#!/usr/bin/python3
+a = 98
