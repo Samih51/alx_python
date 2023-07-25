@@ -9,5 +9,5 @@ if __name__=="__main__":
 
         while (i<a):
            
-            print (i-1,": ",argv[i])
+            print (i,": ",argv[i])
             i+=1
