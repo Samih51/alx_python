@@ -9,5 +9,5 @@ if __name__=="__main__":
 
         while (i<a):
            
-            print ("{}:{}".format(i,argv[i]))
+            print ("{}: {}".format(i,argv[i]))
             i+=1
