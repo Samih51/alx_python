@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 if __name__=="__main__":
-    argv = ["hello" ,"world"]
+    from sys import argv
     a=len(argv)
-    if a==0:
+    if a==1:
         print("0 arguments.")
     else:
-        i=0
+        i=1
+
         while (i<a):
-            print (i,": ",argv[i])
+           
+            print (i-1,": ",argv[i])
             i+=1
