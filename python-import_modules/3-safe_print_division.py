@@ -11,3 +11,4 @@ def safe_print_division(a,b):
         print("An unexpected error occurred:", e)
     finally:
         print("Inside result:{}".format(result))
+        print("{:d} / {:d} = {}".format(a, b, result))
