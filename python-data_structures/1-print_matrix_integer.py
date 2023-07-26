@@ -10,5 +10,3 @@ def print_matrix_integer(matrix=[[]]):
         print()
         j=0
         i+=1
-
-print_matrix_integer([[1,2,3],[4,5],[7]])
