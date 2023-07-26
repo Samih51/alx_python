@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
     while(i<outside_len):
         inside_len=len(matrix[i])
         while (j<inside_len):
-            print(matrix[i][j],end =" ")
+            print("{}".format(matrix[i][j]),end =" ")
             j+=1
         print()
         j=0
