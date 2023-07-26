@@ -3,4 +3,3 @@ def no_c(my_string):
     a= my_string.translate({ord('c'): None})
     b= a.translate({ord('C'): None})
     return b
-print(no_c("chello"))
