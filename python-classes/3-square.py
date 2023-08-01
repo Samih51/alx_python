@@ -26,6 +26,3 @@ class Square:
     def area(self):
         """This returns the area of a square"""
         return (self.__size**2)
-a=Square(10)
-a.size=2
-print(a.size)
