@@ -7,10 +7,6 @@ class Square:
     def __init__(self,size=0):
         self.__size = size
 
-    def size(self):
-        """Returns the value of size. It is a getter method"""
-        return (self.__size)
-    
     def size(self, value):
         """Sets the value of size. It is a setter method"""
         self.__size = value
@@ -20,6 +16,11 @@ class Square:
         if self.__size < 0:
             raise ValueError("size must be >= 0")
         
+    def size(self):
+        """Returns the value of size. It is a getter method"""
+       
+        return self.__size
+    
     def area(self):
         """This returns the area of a square"""
         return (self.__size**2)
