@@ -12,3 +12,6 @@ class Square:
     
         if self.__size < 0:
             raise ValueError("size must be >= 0")
+    def area(self):
+        """This returns the area of a square"""
+        return (self.__size**2)
