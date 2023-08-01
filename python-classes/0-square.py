@@ -1,3 +1,4 @@
+""" this class represents a square"""
 class Square:
     """ 
         defineing the size of a square for later on use
