@@ -8,7 +8,7 @@ class Square:
         self.__size = size
 
     """Sets the value of size. It is a setter method"""
-    @size.setter
+
     def size(self, value):
         """Sets the value of size. It is a setter method"""
         self.__size = value
