@@ -9,9 +9,8 @@ class BaseGeometry():
         for attr in attributes:
             if attr != "__init_subclass__":
                 n_attributes.append(attr)
-        attributes=n_attributes
+        attributes = n_attributes
         return attributes
-    
     def area(self):
          raise Exception("area() is not implemented")
 
@@ -19,9 +18,9 @@ class BaseGeometry():
 
         """this validaes value"""
 
-        if type(value)!=int:
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value<0 or value==0:
+        if value<0 or value == 0:
             raise ValueError("{} must be greater than 0".format(name))
 
 
