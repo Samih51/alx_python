@@ -10,5 +10,3 @@ class BaseGeometry:
         attributes=n_attributes
         return attributes
     
-
-print(dir(BaseGeometry))
