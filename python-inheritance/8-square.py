@@ -1,7 +1,18 @@
-"""This contains the base class for shapes"""
+"""meta class to remove __init_subclass__"""
 
 
-class BaseGeometry():
+class ExcludeInitSubclassMeta(type):
+
+    """remove __init_subclass__"""
+    
+    def __dir__(cls):
+        attributes = super().__dir__()
+        return [attr for attr in attributes if attr != "__init_subclass__"]
+
+"""creation of an empty class"""
+
+
+class BaseGeometry(metaclass=ExcludeInitSubclassMeta):
 
     """The base class"""
 
@@ -45,7 +56,7 @@ class Rectangle(BaseGeometry):
 """this is a square class"""
 
 
-class Square(Rectangle):
+class Square(Rectangle,metaclass=ExcludeInitSubclassMeta):
     """This class contains all the info about a square"""
     def __init__(self, size):
         self.__size = size
