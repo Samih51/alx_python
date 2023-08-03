@@ -1,11 +1,11 @@
 """creation of an empty class"""
-class BaseGeometry:
-    """the empty class"""
-    def __dir__(cls)->None:
+class ExcludeInitSubclassMeta(type):
+    """this excludes __init_subclass__ from the output"""
+    def __dir__(self):
         attributes = super().__dir__()
-        n_attributes=[]
-        for attr in attributes:
-            if attr !="__init_subclass__":
-                n_attributes.append(attr)
-        attributes=n_attributes
-        return attributes
+        return [attr for attr in attributes if attr != "__init_subclass__"]
+
+class BaseGeometry(metaclass=ExcludeInitSubclassMeta):
+    """The empty class"""
+
+print(dir(BaseGeometry))
