@@ -28,7 +28,7 @@ class BaseGeometry(metaclass=ExcludeInitSubclassMeta):
 
 
 """class that takes in width and height"""
-class Rectangle(BaseGeometry):
+class Rectangle(BaseGeometry,metaclass=ExcludeInitSubclassMeta):
     """class that takes in width and height and validates it"""
 
     def __init__(self, width, height):
