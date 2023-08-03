@@ -18,8 +18,10 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value<0 or value==0:
             raise ValueError("{} must be greater than 0".format(name))
-
+"""class that takes in width and height"""
 class Rectangle(BaseGeometry):
+    """class that takes in width and height and validates it"""
+
     def __init__(self, width, height):
         self.__width=width
         self.__height=height
