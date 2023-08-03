@@ -1,4 +1,4 @@
-from base_geometry import BaseGeometry
+import base_geometry
 """class that takes in width and height"""
 class Rectangle(BaseGeometry):
     """class that takes in width and height and validates it"""
