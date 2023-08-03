@@ -1,7 +1,7 @@
 """creation of an empty class"""
 class BaseGeometry:
     """the empty class"""
-    def __dir__(cls):
+    def __dir__(cls)->None:
         attributes = super().__dir__()
         n_attributes=[]
         for attr in attributes:
