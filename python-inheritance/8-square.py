@@ -11,7 +11,7 @@ class BaseGeometry():
                 n_attributes.append(attr)
         attributes = n_attributes
         return attributes
-    def area(self):
+    def area (self):
          raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
