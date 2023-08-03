@@ -38,7 +38,7 @@ class BaseGeometry(metaclass=ExcludeInitSubclassMeta):
 """This is a rectangle class"""
 
 
-class Rectangle(BaseGeometry,metaclass=ExcludeInitSubclassMeta):
+class Rectangle(BaseGeometry, metaclass=ExcludeInitSubclassMeta):
     """Class that takes in width and height and validates it"""
     def __init__(self, width, height):
         self.__width = width
@@ -56,7 +56,7 @@ class Rectangle(BaseGeometry,metaclass=ExcludeInitSubclassMeta):
 """this is a square class"""
 
 
-class Square(Rectangle,metaclass=ExcludeInitSubclassMeta):
+class Square(Rectangle, metaclass=ExcludeInitSubclassMeta):
     """This class contains all the info about a square"""
     def __init__(self, size):
         self.__size = size
