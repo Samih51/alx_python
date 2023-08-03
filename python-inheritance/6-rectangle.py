@@ -1,4 +1,3 @@
-
 """creation of an empty class"""
 class BaseGeometry:
     """the empty class"""
@@ -19,13 +18,15 @@ class BaseGeometry:
             raise TypeError("{} must be an integer".format(name))
         if value<0 or value==0:
             raise ValueError("{} must be greater than 0".format(name))
+
+
 """class that takes in width and height"""
 class Rectangle(BaseGeometry):
     """class that takes in width and height and validates it"""
 
     def __init__(self, width, height):
+        """the init function"""
         self.__width=width
         self.__height=height
-    
-    super().integer_validator("width",self.width)
-    super().integer_validator("height",self.height)
+        super().integer_validator("width",self.__width)
+        super().integer_validator("height",self.__height)
