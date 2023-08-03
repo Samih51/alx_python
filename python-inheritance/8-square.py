@@ -1,6 +1,6 @@
 """creation of an empty class"""
 
-class BaseGeometry:
+class BaseGeometry():
 
     """the empty class"""
     def __dir__(cls)->None:
