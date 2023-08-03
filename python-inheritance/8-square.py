@@ -39,7 +39,7 @@ class Rectangle(BaseGeometry):
 
 """this is a class about a square"""
 class Square(Rectangle):
-
+    """this contains all the info about square"""
     def __init__(self, size):
         self.__size=size
         super().integer_validator("size",self.__size)
