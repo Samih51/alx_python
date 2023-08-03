@@ -1,6 +1,7 @@
+"""This contains the base class for shapes"""
 class BaseGeometry():
 
-    """The empty class"""
+    """The base class"""
 
     def __dir__(cls) -> None:
         attributes = super().__dir__()
@@ -21,7 +22,7 @@ class BaseGeometry():
         if value < 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-
+"""This is a rectangle class"""
 class Rectangle(BaseGeometry):
     """Class that takes in width and height and validates it"""
     def __init__(self, width, height):
@@ -37,7 +38,7 @@ class Rectangle(BaseGeometry):
         """Calculates area"""
         return self.__width * self.__height
 
-
+"""this is a square class"""
 class Square(Rectangle):
     """This class contains all the info about a square"""
     def __init__(self, size):
