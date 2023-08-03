@@ -2,6 +2,7 @@
 
 def inherits_from(obj, a_class):
 
+
     """returns true/flase if its inherited or not"""
 
-    return (isinstance(obj,type))
+    return (isinstance(obj, a_class))
