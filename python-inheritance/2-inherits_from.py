@@ -1,6 +1,3 @@
-"""This function checks if an class inherits form another class"""
-
 def inherits_from(obj, a_class):
-    """returns true/flase if its inherited or not"""
-
-    return (isinstance(obj, a_class))
+    """Returns true/false if it's inherited or not"""
+    return isinstance(obj, a_class)
