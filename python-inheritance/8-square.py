@@ -4,7 +4,7 @@
 class ExcludeInitSubclassMeta(type):
 
     """remove __init_subclass__"""
-    
+
     def __dir__(cls):
         attributes = super().__dir__()
         return [attr for attr in attributes if attr != "__init_subclass__"]
@@ -38,7 +38,7 @@ class BaseGeometry(metaclass=ExcludeInitSubclassMeta):
 """This is a rectangle class"""
 
 
-class Rectangle(BaseGeometry):
+class Rectangle(BaseGeometry,metaclass=ExcludeInitSubclassMeta):
     """Class that takes in width and height and validates it"""
     def __init__(self, width, height):
         self.__width = width
