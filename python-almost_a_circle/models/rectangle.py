@@ -101,6 +101,7 @@ class Rectangle(Base):
         l=0
         while(k<self.__y):
             print()
+            k+=1
         while(i<self.__height):
             while(l<self.__x):
                 print(" ",end="")
