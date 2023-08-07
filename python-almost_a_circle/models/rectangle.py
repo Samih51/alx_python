@@ -104,6 +104,7 @@ class Rectangle(Base):
         while(i<self.__height):
             while(l<self.__x):
                 print(" ",end="")
+                l+=1
             while(j<self.__width):
                 print("#",end="")
                 j+=1
