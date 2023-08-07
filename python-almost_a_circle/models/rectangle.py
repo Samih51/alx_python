@@ -1,5 +1,5 @@
 """imports the Base class from base file"""
-from base import Base
+from models.base import Base
 """this is a class that has all the info about rectangle"""
 class Rectangle(Base):
     """this class holds all the attributes of a rectangle"""
