@@ -102,4 +102,5 @@ class Rectangle(Base):
                 print("#",end="")
                 j+=1
             print()
+            j=0
             i+=1
