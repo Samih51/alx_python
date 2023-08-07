@@ -1,3 +1,4 @@
+from base import base
 """this is a class that has all the info about rectangle"""
 class Rectangle(base):
     """this class holds all the attributes of a rectangle"""
