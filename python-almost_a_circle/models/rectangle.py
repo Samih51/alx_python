@@ -5,7 +5,7 @@ class Rectangle(Base):
     """this class holds all the attributes of a rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.id=super().id
+        super().__init__(id)
         self.__width=width
         self.__height=height
         self.__x=x
