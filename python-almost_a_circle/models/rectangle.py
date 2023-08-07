@@ -6,6 +6,8 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
+        if not (type(width)==int):
+            raise TypeError("width must be an integer")
         self.__width=width
         self.__height=height
         self.__x=x
@@ -20,9 +22,8 @@ class Rectangle(Base):
     @width.setter
     def width(self,value):
         """sets the value of width"""
-        if not isinstance(value, int):
-             raise TypeError("width must be an integer")
-
+        if not (type(value)==int):
+            raise TypeError("width must be an integer")
         if value<=0:
             raise ValueError("width must be > 0")
         self.__width=value
@@ -68,3 +69,4 @@ class Rectangle(Base):
         if value<0:
             raise ValueError("y must be >= 0")
         self.__y=value
+r=Rectangle("1",2,3,4)
