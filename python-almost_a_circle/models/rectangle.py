@@ -1,6 +1,6 @@
-from base import base
+from base import Base
 """this is a class that has all the info about rectangle"""
-class Rectangle(base):
+class Rectangle(Base):
     """this class holds all the attributes of a rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
