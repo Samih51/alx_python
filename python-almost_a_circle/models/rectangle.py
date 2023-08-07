@@ -97,12 +97,19 @@ class Rectangle(Base):
         """this diplays a rectangle using #"""
         i=0
         j=0
+        k=0
+        l=0
+        while(k<self.__y):
+            print()
         while(i<self.__height):
+            while(l<self.__x):
+                print(" ",end="")
             while(j<self.__width):
                 print("#",end="")
                 j+=1
             print()
             j=0
+            l=0
             i+=1
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,self.__x,self.__y,self.__width,self.__height))
