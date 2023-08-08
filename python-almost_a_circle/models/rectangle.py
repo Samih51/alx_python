@@ -27,11 +27,6 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y=y
 
-    """getter method for id"""
-    @property
-    def id(self):
-        """returns the value of id"""
-        return self.id
     
     """getter method for width"""
     @property
@@ -147,7 +142,3 @@ class Rectangle(Base):
             self.id = args[0]
         else:
             return
-
-r = Rectangle(10, 12)
-r.update(12)
-print(r.id)
