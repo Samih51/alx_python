@@ -115,3 +115,29 @@ class Rectangle(Base):
             i+=1
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,self.__x,self.__y,self.__width,self.__height))
+    
+    """Updates calues"""
+    def update(self, *args):
+        """This function updates the values of the rectangle"""
+        if len(args) == 5:
+            args[0]=self.id
+            args[1]=self.__width
+            args[2]=self.__height
+            args[3]=self.__x
+            args[4]=self.__y
+        elif len(args) == 4:
+            args[0]=self.id
+            args[1]=self.__width
+            args[2]=self.__height
+            args[3]=self.__x
+        elif len(args) == 3:
+            args[0]=self.id
+            args[1]=self.__width
+            args[2]=self.__height
+        elif len(args) == 2:
+            args[0]=self.id
+            args[1]=self.__width
+        elif len(args) == 1:
+            args[0]=self.id
+        else:
+            return
