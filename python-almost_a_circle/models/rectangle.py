@@ -27,11 +27,12 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y=y
 
-     """getter method for width"""
+    """getter method for id"""
     @property
     def id(self):
-        """returns the value of width"""
+        """returns the value of id"""
         return self.id
+    
     """getter method for width"""
     @property
     def width(self):
