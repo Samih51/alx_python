@@ -126,24 +126,28 @@ class Rectangle(Base):
     def update(self, *args):
         """This function updates the values of the rectangle"""
         if len(args) == 5:
-            args[0]=self.id
-            args[1]=self.__width
-            args[2]=self.__height
-            args[3]=self.__x
-            args[4]=self.__y
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
         elif len(args) == 4:
-            args[0]=self.id
-            args[1]=self.__width
-            args[2]=self.__height
-            args[3]=self.__x
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
         elif len(args) == 3:
-            args[0]=self.id
-            args[1]=self.__width
-            args[2]=self.__height
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
         elif len(args) == 2:
-            args[0]=self.id
-            args[1]=self.__width
+            self.id = args[0]
+            self.__width = args[1]
         elif len(args) == 1:
-            args[0]=self.id
+            self.id = args[0]
         else:
             return
+
+r = Rectangle(10, 12)
+r.update(12)
+print(r.id)
