@@ -5,7 +5,7 @@ class Square(Rectangle):
     """this class holds all the attributes of a square"""
     def __init__(self, size, x=0, y=0, id=None):
          super().__init__(size, size, x, y, id)
-         self.__size=size
+
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
@@ -14,7 +14,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """returns the value of size"""
-        return self.__size
+        return self.width
     """setter method for size"""
     @size.setter
     def size(self,value):
@@ -23,7 +23,6 @@ class Square(Rectangle):
             raise TypeError("size must be an integer")
         if value<=0:
             raise ValueError("size must be > 0")
-        self.__size = value
-        self.width = self.__size
-        self.height = self.__size
+        self.width = value
+        self.height = value
     
