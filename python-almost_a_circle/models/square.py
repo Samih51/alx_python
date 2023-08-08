@@ -5,9 +5,9 @@ class Square(Rectangle):
     """this class holds all the attributes of a square"""
     def __init__(self, size, x=0, y=0, id=None):
         if not (type(size)==int):
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if size<=0:
-            raise ValueError("size must be > 0")
+            raise ValueError("width must be > 0")
         super().__init__(size, size, x, y, id)
 
 
@@ -24,9 +24,9 @@ class Square(Rectangle):
     def size(self,value):
         """sets the value of size"""
         if value<=0:
-            raise ValueError("size must be > 0")
+            raise ValueError("width must be > 0")
         if not (type(value)==int):
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         self.width = value
         self.height = value
     
