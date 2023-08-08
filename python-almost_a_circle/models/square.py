@@ -4,7 +4,11 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """this class holds all the attributes of a square"""
     def __init__(self, size, x=0, y=0, id=None):
-         super().__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
+        if not (type(size)==int):
+            raise TypeError("size must be an integer")
+        if size<=0:
+            raise ValueError("size must be > 0")
 
 
     def __str__(self):
