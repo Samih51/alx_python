@@ -118,7 +118,7 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,self.__x,self.__y,self.__width,self.__height))
     
     """Updates calues"""
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """This function updates the values of the rectangle"""
         if len(args) == 5:
             self.id = args[0]
@@ -141,4 +141,14 @@ class Rectangle(Base):
         elif len(args) == 1:
             self.id = args[0]
         else:
-            return
+            for name, value in kwargs.items():
+                if name =="height":
+                    self.__height = value
+                if name =="width":
+                    self.__width = value
+                if name =="x":
+                    self.__x = value
+                if name =="y":
+                    self.__y = value
+                if name =="id":
+                    self.id = value
