@@ -15,6 +15,6 @@ request = requests.post( url , data = {'email':email} )
 
 #try:
   #  response = request.json()
-print("Your email is:", request.text)
+print(request.text)
 #except Exception as e:
  #   print("Error:", e)
