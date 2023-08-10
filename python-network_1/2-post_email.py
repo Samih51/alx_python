@@ -11,10 +11,10 @@ request = requests.post( url , data = {'email':email} )
 #response = request.json()
 #print("Your email is:", response.get("form")['email'])
 
-print("Response content:", request.text)  # Print the response content
+#print("Response content:", request.text)  # Print the response content
 
-try:
-    response = request.json()
-    print("Your email is:", response.get('email'))
-except Exception as e:
-    print("Error:", e)
+#try:
+  #  response = request.json()
+print("Your email is:", request.text)
+#except Exception as e:
+ #   print("Error:", e)
