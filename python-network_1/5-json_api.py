@@ -11,7 +11,7 @@ else:
 
 
 request = requests.post( "http://0.0.0.0:5000/search_user" , data = {'letter':q} )
-print()
+
 try:
     data = request.json()
     if data:
