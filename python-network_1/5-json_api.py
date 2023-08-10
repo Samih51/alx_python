@@ -4,7 +4,6 @@ import requests
 """importing sys"""
 import sys
 
-q = sys.argv[1]
 if len(sys.argv) > 1:
     q = sys.argv[1]
 else:
