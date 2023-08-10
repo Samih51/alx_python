@@ -4,11 +4,8 @@ import requests
 """importing sys"""
 import sys
 
-url = sys.argv[1]
-
-request = requests.get(url)
-
+request = requests.get(sys.argv[1])
 if request.status_code >= 400:
-    print("Error code: {}".format(request.status_code))
+        print("Error code: {}".format(request.status_code))
 else:
-    print("Regular request")
+        print(request.text)
