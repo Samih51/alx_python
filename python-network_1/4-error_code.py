@@ -5,11 +5,10 @@ import requests
 import sys
 
 url = sys.argv[1]
-#request = requests.get("https://alu-intranet.hbtn.io/status")
 
 request = requests.get(url)
-status = request.status_code
-if status >= 400:
-    print("Error code: {}".format(status))
+
+if request.status_code >= 400:
+    print("Error code: {}".format(request.status_code))
 else:
     print("Regular request")
