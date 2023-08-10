@@ -15,7 +15,7 @@ print(dir(request.json()))
 try:
     data = request.json()
     if data:
-        print("[{}] {}".format(data['keys'], data['values']))
+        print("[{}] {}".format(data['id'], data['name']))
     else:
         print("No result")
 except ValueError:
