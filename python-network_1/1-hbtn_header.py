@@ -8,6 +8,7 @@ url = sys.argv[1]
 
 
 request = requests.get(url)
-if request.headers['X-Request-Id']:
+try:
     print(request.headers['X-Request-Id'])
-
+except:
+    pass
