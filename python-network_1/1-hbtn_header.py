@@ -8,5 +8,6 @@ url = sys.argv[1]
 
 
 request = requests.get(url)
-print(request.headers['X-Request-Id'])
+if not request.headers['X-Request-Id']:
+    print(request.headers['X-Request-Id'])
 
