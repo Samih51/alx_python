@@ -1,13 +1,11 @@
-"""importing requests"""
-import requests
-
 """importing sys"""
 import sys
 
-url = sys.stdin.readline()
-abc="qwerty"
-print(type(abc))
-print(type(url))
+"""importing requests"""
+import requests
+
+
+url = input()
 
 request = requests.get(url)
 print(request.headers['X-Request-Id'])
