@@ -11,11 +11,11 @@ else:
 
 
 request = requests.post( "http://0.0.0.0:5000/search_user" , data = {'letter':q} )
-
+print()
 try:
     data = request.json()
     if data:
-        print("[{}] {}".format(data['id'], data['name']))
+        print("[{}] {}".format(data.get('id'), data.get('name')))
     else:
         print("No result")
 except ValueError:
