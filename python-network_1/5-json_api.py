@@ -5,12 +5,12 @@ import requests
 import sys
 
 if len(sys.argv) > 1:
-    q = sys.argv[1]
+    letter = {"q" : sys.argv[1]}
 else:
-    q = ""
+     letter = {"q" : ""}
 
 
-request = requests.post( "http://0.0.0.0:5000/search_user" , data = {'letter':q} )
+request = requests.post( "http://0.0.0.0:5000/search_user" , data = letter )
 
 try:
     data = request.json()
