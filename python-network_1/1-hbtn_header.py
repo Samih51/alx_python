@@ -1,13 +1,12 @@
-"""importing sys"""
-import sys
-
 """importing requests"""
 import requests
 
+"""importing sys"""
+import sys
 
-url = input()
+url = sys.stdin.readline()
+
 
 request = requests.get(url)
 print(request.headers['X-Request-Id'])
 
-#https://alu-intranet.hbtn.io/status   https://intranet.hbtn.io
