@@ -9,7 +9,7 @@ url = sys.argv[1]
 
 request = requests.get(url)
 status = request.status_code
-if ( status >= 400):
-    print("Error code:",status)
+if status >= 400:
+    print("Error code: {}".format(status))
 else:
     print("Regular request")
