@@ -4,7 +4,7 @@ import requests
 """importing sys"""
 import sys
 
-url = sys.stdin.readline()
+url = sys.argv[1]
 
 
 request = requests.get(url)
