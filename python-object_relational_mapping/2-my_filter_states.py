@@ -8,7 +8,7 @@ cur = database.cursor()
 
 cur = database.cursor()
 
-rows = cur.execute("SELECT * FROM states WHERE name = '{}' "
+rows = cur.execute("SELECT * FROM states WHERE BINARY name = '{}' "
                    "ORDER BY id".format(sys.argv[4]))
 
 
