@@ -6,7 +6,7 @@ database = MySQLdb.connect(host="localhost", user=sys.argv[1],
 
 cur = database.cursor()
 pattern = 'N%'
-rows = cur.execute("SELECT * FROM states WHERE name LIKE %s COLLATE utf8_bin ORDER BY id", (pattern,))
+rows = cur.execute("SELECT * FROM states WHERE BINARY name LIKE %s ORDER BY id", (pattern,))
 
 results = cur.fetchall()
 
