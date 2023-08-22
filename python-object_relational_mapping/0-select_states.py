@@ -4,6 +4,9 @@ database = MySQLdb.connect(host = "localhost", user=sys.argv[1], passwd=sys.argv
 
 cur = database.cursor()
 
+rows = cur.execute("SELECT * FROM states ORDER BY id")
+
 results = cur.fetchall()
+
 for result in results:
     print (result)
