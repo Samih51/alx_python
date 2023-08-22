@@ -11,6 +11,7 @@ cur = database.cursor()
 rows = cur.execute("SELECT * FROM states WHERE name = %s "
                    "ORDER BY id".format(sys.argv[4]))
 
+
 results = cur.fetchall()
 
 for result in results:
