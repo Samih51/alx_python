@@ -10,4 +10,4 @@ rows = cur.execute("SELECT * FROM states ORDER BY id")
 
 results = cur.fetchall()
 for result in results:
-    print(result)
+    print(result)#
