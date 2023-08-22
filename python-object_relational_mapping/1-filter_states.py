@@ -6,7 +6,7 @@ database = MySQLdb.connect(host="localhost", user=sys.argv[1],
 
 cur = database.cursor()
 
-rows = cur.execute("SELECT * FROM states WHERE name LIKE %N ORDER BY id")
+rows = cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id",'%N')
 
 results = cur.fetchall()
 
