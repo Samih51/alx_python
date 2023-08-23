@@ -13,3 +13,7 @@ results = cur.fetchall()
 
 for result in results:
     print(result)
+
+
+cur.close()
+database.close()
