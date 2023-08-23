@@ -9,7 +9,7 @@ cur = database.cursor()
 cur = database.cursor()
 
 rows = cur.execute("SELECT id, name, state.name FROM cities NATURAL JOIN "
-                   "states ORDER BY id")
+                   "states WHERE id = states.id ORDER BY id")
 
 
 results = cur.fetchall()
