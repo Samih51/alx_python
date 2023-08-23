@@ -1,4 +1,5 @@
-"""This script demonstrates the use of SQLAlchemy to connect to a MySQL database."""
+"""This script demonstrates the use of
+ SQLAlchemy to connect to a MySQL database."""
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
@@ -7,7 +8,7 @@ Base = declarative_base()
 
 """the state class"""
 
-class State(Base):
+class State(Base) : 
     """Represents a state entity in the database."""
 
     __tablename__ = 'states'
