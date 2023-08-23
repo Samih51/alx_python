@@ -15,7 +15,7 @@ city_names = []
 for result in results:
     if result[1] == sys.argv[4]:
         city_names.append(result[0])
-    
+
 print(", ".join(city_names))
 
 cur.close()
