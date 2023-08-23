@@ -15,7 +15,7 @@ rows = cur.execute("SELECT * FROM states "
 results = cur.fetchall()
 
 for result in results:
-    if result[1]==sys.argv[4] :
+    if result[1] ==sys.argv[4]:
         print(result)
 
 
