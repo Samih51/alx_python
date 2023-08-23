@@ -13,7 +13,7 @@ count = 0
 
 for state in session.query(State).order_by(State.id):
     if count == 0:
-        print(state.id,state.name)
+        print("{}: {}".format(state.id,state.name))
         count+=1
 if count == 0:
     print("Nothing")
