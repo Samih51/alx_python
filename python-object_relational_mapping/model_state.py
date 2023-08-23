@@ -12,7 +12,10 @@ connection = database.connect()
 
 Base = declarative_base()
 
+"""the state class"""
 class State(Base):
+    """this is a class about state"""
+
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name =  Column(String(128))
