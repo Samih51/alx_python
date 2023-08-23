@@ -8,7 +8,7 @@ Base = declarative_base()
 
 """the state class"""
 
-class State(Base) : 
+class State(Base):
     """Represents a state entity in the database."""
 
     __tablename__ = 'states'
