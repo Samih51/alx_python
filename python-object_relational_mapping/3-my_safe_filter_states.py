@@ -8,14 +8,15 @@ cur = database.cursor()
 
 cur = database.cursor()
 
-rows = cur.execute("SELECT * FROM states WHERE BINARY name = '{}' "
-                   "ORDER BY id".format(sys.argv[4]))
+rows = cur.execute("SELECT * FROM states"
+                   "ORDER BY id")
 
 
 results = cur.fetchall()
 
 for result in results:
-    print(result)
+    if result[1]==sys.argv[4]:
+        print(result)
 
 
 cur.close()
