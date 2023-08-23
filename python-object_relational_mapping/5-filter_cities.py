@@ -14,7 +14,7 @@ results = cur.fetchall()
 
 for result in results:
     if result[1] == sys.argv[4]:
-        print(result[0],end="")
+        print(result[0],end=", ")
     
 
 cur.close()
