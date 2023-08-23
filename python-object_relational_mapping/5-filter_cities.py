@@ -9,8 +9,7 @@ cur = database.cursor()
 cur = database.cursor()
 
 rows = cur.execute("SELECT cities.name FROM "
-                   "cities JOIN states ON cities.state_id = states.id "
-                   "ORDER BY cities.id")
+                   "cities JOIN states ON cities.state_id = states.id ")
 
 
 results = cur.fetchall()
