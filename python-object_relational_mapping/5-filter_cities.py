@@ -6,9 +6,8 @@ database = MySQLdb.connect(host="localhost", user=sys.argv[1],
 
 cur = database.cursor()
 
-rows = cur.execute("SELECT cities.id, cities.name, states.name FROM "
-                   "cities JOIN states ON cities.state_id = states.id "
-                   "ORDER BY cities.id")
+rows = cur.execute("SELECT cities.name FROM "
+                   "cities JOIN states ON cities.state_id = states.id ")
 
 
 results = cur.fetchall()
