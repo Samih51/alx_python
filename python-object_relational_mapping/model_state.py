@@ -1,18 +1,12 @@
-"""this imports sys"""
-import sys
 
-"""This script demonstrates the use of SQLAlchemy to connect to a MySQL database."""
-from sqlalchemy import create_engine
 """This script demonstrates the use of SQLAlchemy to connect to a MySQL database."""
 from sqlalchemy.ext.declarative import declarative_base
-"""This script demonstrates the use of SQLAlchemy to connect to a MySQL database."""
 from sqlalchemy import Column, Integer, String
 
-path = "mysql+mysqldb://{}:{}@localhost/{}".format(sys.argv[1], sys.argv[2], sys.argv[3])
+#path = "mysql+mysqldb://{}:{}@localhost/{}".format(sys.argv[1], sys.argv[2], sys.argv[3])
 
-database = create_engine(path, echo=True)
-connection = database.connect()
-
+#database = create_engine(path, echo=True)
+#connection = database.connect()
 
 Base = declarative_base()
 
@@ -28,4 +22,4 @@ class State(Base):
         """Initialize a State object with a name."""
         self.name = name
 
-Base.metadata.create_all(bind=database)
+#Base.metadata.create_all(bind=database)
