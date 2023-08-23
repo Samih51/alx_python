@@ -8,7 +8,7 @@ cur = database.cursor()
 
 cur = database.cursor()
 
-rows = cur.execute("SELECT * FROM states"
+rows = cur.execute("SELECT * FROM states "
                    "ORDER BY id")
 
 
