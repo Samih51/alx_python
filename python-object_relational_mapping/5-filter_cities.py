@@ -11,11 +11,12 @@ rows = cur.execute("SELECT cities.name, states.name FROM "
 
 
 results = cur.fetchall()
-
+city_names = []
 for result in results:
     if result[1] == sys.argv[4]:
-        print(result[0],end=", ")
+        city_names.append(result[0])
     
+print(", ".join(city_names))
 
 cur.close()
 database.close()
