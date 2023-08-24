@@ -9,11 +9,9 @@ engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
 
 Session = sessionmaker(bind=engine)
 session = Session()
-count = 0
+first = session.query(State).order_by(State.id).first()
 
-for state in session.query(State).order_by(State.id):
-    if count == 0:
-        print("{}: {}".format(state.id,state.name))
-        count+=1
-if count == 0:
+if first:
+    print("{}: {}".format(first.id,first.name))
+else:
     print("Nothing")
