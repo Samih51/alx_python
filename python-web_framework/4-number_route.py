@@ -28,7 +28,7 @@ def python1(text= 'is cool') :
 
 @app.route("/number/<n>", strict_slashes=False)
 def number(n) :
-    if (type(n) == int):
+#    if (type(n) == int):
         return ("{} is a number".format(n) )
 
 
