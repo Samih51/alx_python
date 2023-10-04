@@ -1,3 +1,4 @@
+""" Check student JSON output """
 import json
 import requests 
 import sys
