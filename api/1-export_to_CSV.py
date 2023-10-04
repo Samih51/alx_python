@@ -12,6 +12,7 @@ if __name__=="__main__":
     todo_response = requests.get(todo_url)
     user_response = requests.get(user_url)
 
+    
     todo_data = todo_response.json()
     user_data = user_response.json()
 
@@ -24,7 +25,7 @@ if __name__=="__main__":
 
     # Add tasks data to CSV data list
     for task in todo_data:
-        task_completed_status = task["completed"] 
+        task_completed_status = task["completed"]
         task_title = task["title"]
         csv_data.append([user_id, username, task_completed_status, task_title])
 
