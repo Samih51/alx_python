@@ -26,16 +26,10 @@ if __name__=="__main__":
     employee_name = user_data["name"]
     
     # Open CSV file for writing 
-    csv_file = open('{}.csv'.format(user_id), 'w', newline='')
-
+    csv_file = "{}.csv".format(user_id)
     # Create CSV writer 
     writer = csv.writer(csv_file)
 
-    # Write header row
-    writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
-    
-    # Write data rows
-    for task in todo_data:
-        writer.writerow([user_id, employee_name, task['completed'], task['title']])
-
-    csv_file.close()
+    with open(csv_file, 'w') as csvfile:
+        for task in todo_data:
+            writer.writerow([user_id,user_data['username'], task['completed'], task['title']])
