@@ -10,36 +10,32 @@ import json
 import requests
 import sys
 
-if __name__=="__main__":
+if __name__ == "__main__":
+
     user_id = sys.argv[1]
-    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
 
-    todo_response = requests.get(todo_url)
     user_response = requests.get(user_url)
+    todo_response = requests.get(todo_url) 
 
-    todo_data = todo_response.json()
     user_data = user_response.json()
+    todo_data = todo_response.json()
 
-    # Extract relevant information
-    username = user_data["username"]
+    # Extract username 
+    username = user_data['username']
 
-
-
-    # Define the JSON file path
-    filename = "{}.json".format(user_id)
-
-    # Prepare data
-    data = [] 
+    # Format task data
+    tasks = []
     for task in todo_data:
-        data.append({
-            "id": user_id,
-            "task": task["title"], 
-            "completed": task["completed"],
+        tasks.append({
+            "task": task["title"],
+            "completed": task["completed"], 
             "username": username
         })
 
-    # Write to JSON
-    output = {user_id: data}
+    # Write to JSON file
+    filename = f"{user_id}.json"
     with open(filename, 'w') as f:
-        json.dump(output, f)
+        json.dump({user_id: tasks}, f)
