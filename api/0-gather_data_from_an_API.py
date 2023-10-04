@@ -4,10 +4,10 @@ import sys
 
 if __name__=="__main__":
     user_id = sys.argv[1]
-    todo_url = "https://jsonplaceholder.typicode.com/users/{user_id}/todos"
-    user_url = "https://jsonplaceholder.typicode.com/users/{user_id}"
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
 
-    # Fetch data from endpoints
+
     todo_response = requests.get(todo_url)
     user_response = requests.get(user_url)
 
@@ -21,6 +21,6 @@ if __name__=="__main__":
     number_of_done_tasks = len(completed_tasks)
 
     # Print the required output format
-    print(f"Employee {employee_name} is done with tasks ({number_of_done_tasks}/{total_tasks}):")
+    print("Employee {} is done with tasks ({}/{}):".format(employee_name,number_of_done_tasks,total_tasks))
     for task in completed_tasks:
-        print(f"\t{task['title']}")
+        print("\t{}".format(task['title']))
