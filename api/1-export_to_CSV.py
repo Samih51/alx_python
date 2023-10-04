@@ -4,8 +4,8 @@ the data in  JSON format. The script accepts an employee ID as a command-line ar
 fetches tasks associated with that ID from the provided API endpoints. The exported files 
 include information about completed tasks and their titles.
 '''
+import csv
 import requests
-
 import sys
 
 if __name__=="__main__":
@@ -22,21 +22,20 @@ if __name__=="__main__":
     todo_data = todo_response.json()
     user_data = user_response.json()
 
-    # Extract relevant information
-    user_id = user_data["id"]
-    username = user_data["username"]
+   # Extract user name
+    employee_name = user_data["name"]
+    
+    # Open CSV file for writing 
+    csv_file = open('{}.csv'.format(user_id), 'w', newline='')
 
-    # Create a list to store CSV data
-    csv_data = [["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]]
+    # Create CSV writer 
+    writer = csv.writer(csv_file)
 
-    # Add tasks data to CSV data list
+    # Write header row
+    writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
+    
+    # Write data rows
     for task in todo_data:
-        task_completed_status = task["completed"]
-        task_title = task["title"]
-        csv_data.append([user_id, username, task_completed_status, task_title])
+        writer.writerow([user_id, employee_name, task['completed'], task['title']])
 
-    # Write CSV data to a file
-    filename = "{}.csv".format(user_id)
-    with open(filename, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerows(csv_data)
+    csv_file.close()
