@@ -14,20 +14,13 @@ if __name__=="__main__":
     todo_data = todo_response.json()
     user_data = user_response.json()
 
- # Extract user name
-    employee_name = user_data["username"]
-    
-    # Open CSV file for writing 
-    csv_file = open('{}.csv'.format(user_id), 'w', newline='')
+ # Extract relevant information
+    employee_name = user_data["name"]
+    total_tasks = len(todo_data)
+    completed_tasks = [task for task in todo_data if task["completed"]]
+    number_of_done_tasks = len(completed_tasks)
 
-    # Create CSV writer 
-    writer = csv.writer(csv_file)
-
-    # Write header row
-    writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
-    
-    # Write data rows
-    for task in todo_data:
-        writer.writerow([user_id, employee_name, task['completed'], task['title']])
-
-    csv_file.close()
+    # Print the required output format
+    print("Employee {} is done with tasks({}/{}):".format(employee_name,number_of_done_tasks,total_tasks))
+    for task in completed_tasks:
+        print("\t {}".format(task['title']))
