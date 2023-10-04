@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+'''
+This Python script retrieves tasks for a specific employee from a REST API and exports 
+the data in  JSON format. The script accepts an employee ID as a command-line argument and 
+fetches tasks associated with that ID from the provided API endpoints. The exported files 
+include information about completed tasks and their titles.
+'''
+
+import json
 import requests
 import sys
-import json
 
 if __name__=="__main__":
     user_id = sys.argv[1]
