@@ -22,14 +22,13 @@ if __name__=="__main__":
     todo_data = todo_response.json()
     user_data = user_response.json()
 
-   # Extract user name
-    employee_name = user_data["name"]
     
     # Open CSV file for writing 
     csv_file = "{}.csv".format(user_id)
-    # Create CSV writer 
-    writer = csv.writer(csv_file)
+   
+
 
     with open(csv_file, 'w') as csvfile:
+        csv_writer = csv.writer(csv_file)
         for task in todo_data:
-            writer.writerow([user_id,user_data['username'], task['completed'], task['title']])
+            csv_writer.writerow([user_id, str(user_data['username']), task['completed'], task['title']])
