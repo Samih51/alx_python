@@ -21,16 +21,21 @@ if __name__=="__main__":
     username = user_data["username"]
 
     # Create a list to store CSV data
-    csv_data = [["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]]
+    csv_data = [
+        {"USER_ID": user_id, "USERNAME": username, "TASK_COMPLETED_STATUS": task["completed"], "TASK_TITLE": task["title"]}
+        for task in todo_data
+    ]
 
-    # Add tasks data to CSV data list
-    for task in todo_data:
-        task_completed_status = task["completed"]
-        task_title = task["title"]
-        csv_data.append([user_id, username, task_completed_status, task_title])
+    # Define the CSV file path
+    filename = f"{user_id}.csv"
 
-    # Write CSV data to a file
-    filename = "{}.csv".format(user_id)
+    # Write CSV data to a file using csv.DictWriter
     with open(filename, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
+        fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        csvwriter = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        # Write the header
+        csvwriter.writeheader()
+
+        # Write the CSV data
         csvwriter.writerows(csv_data)
