@@ -25,15 +25,20 @@ if __name__=="__main__":
     username = user_data["username"]
 
     # Prepare JSON data as a list of dictionaries
-    json_data = []
+    data = []
     for task in todo_data:
-        task_title = task["title"]
-        completed_status = task["completed"]
-        json_data.append({"task": task_title, "completed": completed_status, "username": username})
+        data.append({
+            "id": user_id,
+            "task": task["title"],
+            "completed": task["completed"],
+            "username": username
+        })
+
 
     # Define the JSON file path
     filename = "{}.json".format(user_id)
 
     # Write JSON data to a file
-    with open(filename, 'w') as jsonfile:
-        json.dump({user_id: json_data}, jsonfile)
+    # Write to JSON 
+    with open(filename, 'w') as f:
+        json.dump(data, f)
