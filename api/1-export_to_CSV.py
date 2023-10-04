@@ -30,6 +30,6 @@ if __name__=="__main__":
 
     # Write CSV data to a file
     filename = "{}.csv".format(user_id)
-    with open(filename, 'w') as csvfile:
+    with open(filename, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
         csvwriter.writerows(csv_data)
