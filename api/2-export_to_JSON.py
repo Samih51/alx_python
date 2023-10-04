@@ -12,8 +12,8 @@ import sys
 
 if __name__=="__main__":
     user_id = sys.argv[1]
-    todo_url = f"https://jsonplaceholder.typicode.com/users/{user_id}/todos"
-    user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
 
     todo_response = requests.get(todo_url)
     user_response = requests.get(user_url)
@@ -32,7 +32,7 @@ if __name__=="__main__":
         json_data.append({"task": task_title, "completed": completed_status, "username": username})
 
     # Define the JSON file path
-    filename = f"{user_id}.json"
+    filename = "{}.json".format(user_id)
 
     # Write JSON data to a file
     with open(filename, 'w') as jsonfile:
