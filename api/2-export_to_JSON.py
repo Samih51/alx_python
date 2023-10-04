@@ -1,37 +1,34 @@
 """ student JSON output """
-import json 
-import requests
+import json
+import requests 
+import sys
 
-TODOS_URL = 'https://jsonplaceholder.typicode.com/todos'
-USERS_URL = 'https://jsonplaceholder.typicode.com/users'
+if __name__ == "__main__":
 
-if __name__ == '__main__':
+  user_id = sys.argv[1]
+    
+  todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+  user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
 
-    user_id = 1 # example
+  user_response = requests.get(user_url)
+  todo_response = requests.get(todo_url)
 
-    # Fetch all todos
-    all_todos = requests.get(TODOS_URL).json() 
+  user_data = user_response.json()
+  todo_data = todo_response.json()
 
-    # Filter user's todos
-    user_todos = []
-    for todo in all_todos:
-        if todo['userId'] == user_id:
-            user_todos.append(todo)
+  # Extract username
+  username = user_data['username']
 
-    # Fetch user info
-    user_response = requests.get(f'{USERS_URL}/{user_id}')
-    username = user_response.json()['username']
-
-    # Build tasks list
-    tasks = []
-    for todo in user_todos:
-        tasks.append({
-            'username': username,
-            'task': todo['title'],
-            'completed': todo['completed']
-        })
-
-    # Write JSON file
-    filename = f'{user_id}.json'
-    with open(filename, 'w') as f:
-        json.dump({user_id: tasks}, f)
+  # Format task data
+  tasks = []
+  for task in todo_data:
+    tasks.append({
+      "task": task["title"],
+      "completed": task["completed"],
+      "username": username
+    })
+  
+  # Write JSON file
+  filename = f"{user_id}.json"
+  with open(filename, 'w') as f:
+    json.dump({user_id: tasks}, f)
