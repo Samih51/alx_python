@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Check student JSON output """
 import requests
 import sys
 
