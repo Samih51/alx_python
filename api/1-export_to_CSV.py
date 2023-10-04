@@ -1,13 +1,14 @@
 #!/usr/bin/python3
+
 """
-This Python script retrieves tasks for a specific employee from a REST API and exports 
-the data in CSV and JSON formats. The script accepts an employee ID as a command-line 
-argument and fetches tasks associated with that ID from the provided API endpoints. 
-The exported files include information about completed tasks and their titles.
+this imports request
 """
-import csv
 import requests
+"""
+this imports sys
+"""
 import sys
+
 """
 This Python script retrieves tasks for a specific employee from a REST API and exports 
 the data in CSV and JSON formats. The script accepts an employee ID as a command-line 
@@ -15,12 +16,6 @@ argument and fetches tasks associated with that ID from the provided API endpoin
 The exported files include information about completed tasks and their titles.
 """
 if __name__=="__main__":
-    """
-This Python script retrieves tasks for a specific employee from a REST API and exports 
-the data in CSV and JSON formats. The script accepts an employee ID as a command-line 
-argument and fetches tasks associated with that ID from the provided API endpoints. 
-The exported files include information about completed tasks and their titles.
-"""
     user_id = sys.argv[1]
     todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
