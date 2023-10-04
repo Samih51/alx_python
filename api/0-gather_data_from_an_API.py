@@ -21,6 +21,6 @@ if __name__=="__main__":
     number_of_done_tasks = len(completed_tasks)
 
     # Print the required output format
-    print("Employee {} is done with tasks ({}/{}):".format(employee_name,number_of_done_tasks,total_tasks))
+    print("Employee {} is done with tasks({}/{}):".format(employee_name,number_of_done_tasks,total_tasks))
     for task in completed_tasks:
         print("\t{}".format(task['title']))
