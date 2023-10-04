@@ -26,6 +26,7 @@ if __name__=="__main__":
    
 
     with open(csv_file, 'w') as csvfile:
-        csv_writer = csv.writer(csv_file)
+        csv_writer = csv.writer(csvfile)
         for task in todo_data:
             csv_writer.writerow([user_id, str(user_data['username']), task['completed'], task['title']])
+        csvfile.close()
