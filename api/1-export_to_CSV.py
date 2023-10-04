@@ -11,22 +11,19 @@ import sys
 if __name__=="__main__":
     
     user_id = sys.argv[1]
-    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(user_id)
-
-
-    todo_response = requests.get(todo_url)
     user_response = requests.get(user_url)
-
-    
-    todo_data = todo_response.json()
     user_data = user_response.json()
 
+
+    todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(user_id)
+    todo_response = requests.get(todo_url)
+    todo_data = todo_response.json()
     
-    # Open CSV file for writing 
+
     csv_file = "{}.csv".format(user_id)
    
-
 
     with open(csv_file, 'w') as csvfile:
         csv_writer = csv.writer(csv_file)
